@@ -103,7 +103,7 @@
 				<i class="fa fa-th-list"></i> 服务器信息
 			</header>
 			<div class="panel-body" style="padding: 0px"
-				data-url="/sys/systemInfo.shtml"></div>
+				data-url="/sys/info.shtml"></div>
 		</section>
 	</div>
 	<div class="col-md-6">
