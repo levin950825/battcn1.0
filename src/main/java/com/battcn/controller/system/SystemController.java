@@ -19,21 +19,21 @@ import net.sf.json.JSONObject;
 public class SystemController
 {
 
-	@RequestMapping("info")
-	public String info(Model model)
+	@RequestMapping("monitor")
+	public String monitor(Model model)
 	{
 		model.addAttribute("cpu", PropertiesUtils.findPropertiesKey("cpu"));
 		model.addAttribute("jvm", PropertiesUtils.findPropertiesKey("jvm"));
 		model.addAttribute("ram", PropertiesUtils.findPropertiesKey("ram"));
 		model.addAttribute("toEmail", PropertiesUtils.findPropertiesKey("toEmail"));
-		return "/system/sys/info";
+		return "/system/sys/monitor";
 	}
 
-	@RequestMapping("systemInfo")
+	@RequestMapping("info")
 	public String systemInfo(Model model) throws Exception
 	{
-		model.addAttribute("systemInfo", SystemInfo.SystemProperty());
-		return "/system/sys/systemInfo";
+		model.addAttribute("info", SystemInfo.SystemProperty());
+		return "/system/sys/info";
 	}
 
 	@ResponseBody

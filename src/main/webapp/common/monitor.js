@@ -116,21 +116,6 @@ $(function() {
 				jvm.push(json.jvmUsage);
 				ram.push(json.ramUsage);
 				cpu.push(json.cpuUsage);
-				// 动态数据接口 addData
-				/*myChart.addData([ [ 0, // 系列索引
-				jvm, // 新增数据
-				false, // 新增数据是否从队列头部插入
-				false, // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
-				], [ 1, // 系列索引
-				ram, // 新增数据
-				false, // 新增数据是否从队列头部插入
-				false, // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
-				], [ 2, // 系列索引
-				cpu, // 新增数据
-				false, // 新增数据是否从队列头部插入
-				false, // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
-				axisData // 坐标轴标签
-				] ]);*/
 
 				one_option.series[0].data[0].value = json.jvmUsage;
 				one_option.series[0].data[0].name = 'JVM使用率';
@@ -146,6 +131,6 @@ $(function() {
 				main_three.setOption(one_option, true);
 			}
 		});
-	}, 3000);
+	}, 10000);
 
 });
