@@ -267,6 +267,8 @@ INSERT INTO `t_mp_resources` VALUES ('12', '添加角色', '3', '2', null, '1', 
 INSERT INTO `t_mp_resources` VALUES ('13', '编辑角色', '3', '2', null, '2', null, '<button onclick=\"editRole()\" class=\"btn btn-success\" type=\"button\"><i class=\"fa fa-paste\"></i> 编辑</button>', '2016-01-29 12:14:15', '2', ',1,3,13,');
 INSERT INTO `t_mp_resources` VALUES ('14', '删除角色', '3', '2', null, '3', null, '<button onclick=\"delRole()\" class=\"btn btn-danger\" type=\"button\"><i class=\"fa fa-remove\"></i> 删除</button>', '2016-01-29 12:14:15', '2', ',1,3,14,');
 INSERT INTO `t_mp_resources` VALUES ('15', '分配权限', '3', '2', null, '4', null, '<button onclick=\"rolePermissions()\" class=\"btn btn-warning\" type=\"button\"><i class=\"fa fa-reorder\"></i> 分配权限</button>', '2016-01-29 12:14:15', '2', ',1,3,15,');
+INSERT INTO `t_mp_resources` VALUES ('16', '系统监管', '0', '0', NULL, '1', 'fa fa-columns icon', '系统监管', '2016-03-16 10:24:23', '0', ',16,');
+INSERT INTO `t_mp_resources` VALUES ('17', '实时监控', '16', '1', '/sys/monitor.shtml', '2', NULL, '实时监控', '2016-03-16 19:18:14', '1', ',16,17,');
 
 -- ----------------------------
 -- Table structure for t_mp_role
