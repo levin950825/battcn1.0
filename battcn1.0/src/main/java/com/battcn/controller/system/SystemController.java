@@ -4,13 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.hyperic.sigar.Sigar;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.battcn.entity.ServiceInfoEntity;
+import com.battcn.service.system.IServiceInfoApi;
 import com.battcn.util.PropertiesUtils;
 import com.battcn.util.SystemInfo;
+import com.github.pagehelper.PageInfo;
 
 import net.sf.json.JSONObject;
 
@@ -18,6 +22,21 @@ import net.sf.json.JSONObject;
 @Controller
 public class SystemController
 {
+	@Autowired
+	private IServiceInfoApi serviceInfoApi;
+	
+	@RequestMapping("list")
+	public String main()
+	{
+		return "/system/sys/list";
+	}
+	
+	@RequestMapping("queryMonitorForList")
+	@ResponseBody
+	public PageInfo<ServiceInfoEntity> queryMonitorForList()
+	{
+		return this.serviceInfoApi.queryMonitorForList();
+	}
 
 	@RequestMapping("monitor")
 	public String monitor(Model model)

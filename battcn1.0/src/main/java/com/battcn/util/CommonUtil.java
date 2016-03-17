@@ -1,6 +1,9 @@
 package com.battcn.util;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +16,12 @@ import com.github.pagehelper.StringUtil;
 
 public class CommonUtil
 {
+
+	//private static final String EN_NAME = "en_name";
+
+	//private static final String ZH_NAME = "zh_name";
+
+	//private static final String ZB_NAME = "zb_name";
 
 	/**
 	 * 获取HttpServletRequest;
@@ -230,4 +239,20 @@ public class CommonUtil
 		return num;
 	}
 
+	public static String fromDateH()
+	{
+		DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		return format1.format(new Date());
+	}
+
+	/**
+	 * 返回当前时间 格式：yyyy-MM-dd
+	 * 
+	 * @return String
+	 */
+	public static String fromDateY()
+	{
+		DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+		return format1.format(new Date());
+	}
 }
