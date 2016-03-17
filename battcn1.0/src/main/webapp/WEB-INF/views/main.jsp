@@ -126,7 +126,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-5">
 			<div class="ibox float-e-margins">
 				<div class="ibox-title">
 					<h5>赞助说明</h5>
@@ -147,23 +147,23 @@
 				</div>
 			</div>
 		</div>
+		<div class="col-md-6">
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<div style="font-size: 17px;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; battcn
+					有一个自己的网站空间,所有在学习和使用 battcn 系统的同志们捐助1元或2元就行( 街边吃顿都10元以上啊..... ), 以下是
+					battcn 系统捐助的支付页面，由于空间网站需求收费，故此征集大家为 battcn 系统做一点贡献，有了你的支持，battcn
+					系统将做得更好，服务开源，献身开源！再次致谢 ！</div>
+				<span title="支付连接" style="font-size: 20px; color: blue;">支付宝账：13002171912</span><br>
+				<span title="技术支持" style="font-size: 20px; color: blue;">技术支持：1837307557</span><br>
+				<span title="QQ交流群" style="font-size: 20px; color: blue;">QQ交流群：391619659</span><br>
 
-	</div>
-
-	<div class="col-md-6">
-		<div class="alert alert-danger">
-			<button type="button" class="close" data-dismiss="alert">×</button>
-			<div style="font-size: 17px;">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; battcn
-				有一个自己的网站空间,所有在学习和使用 battcn 系统的同志们捐助1元或2元就行( 街边吃顿都10元以上啊..... ), 以下是
-				battcn 系统捐助的支付页面，由于空间网站需求收费，故此征集大家为 battcn 系统做一点贡献，有了你的支持，battcn
-				系统将做得更好，服务开源，献身开源！再次致谢 ！</div>
-			<span title="支付连接" style="font-size: 20px; color: blue;">支付宝账：13002171912</span><br>
-			<span title="技术支持" style="font-size: 20px; color: blue;">技术支持：1837307557</span><br>
-			<span title="QQ交流群" style="font-size: 20px; color: blue;">QQ交流群：391619659</span><br>
-
+			</div>
 		</div>
 	</div>
+
+
 	<div class="col-sm-2">
 		<div class="ibox float-e-margins">
 			<div class="ibox-title">
