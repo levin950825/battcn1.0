@@ -389,21 +389,21 @@ INSERT INTO `t_mp_user_role` VALUES ('7', '2');
 -- ----------------------------
 -- Procedure structure for treeNodes
 -- ----------------------------
-DROP PROCEDURE IF EXISTS `treeNodes`;
-DELIMITER ;;
-CREATE DEFINER=`root`@`%` PROCEDURE `treeNodes`()
-BEGIN
- DECLARE LEVEL INT ;
- Set LEVEL=0 ;
- update t_mp_resources a inner join (SELECT id,LEVEL,concat(',',ID,',') scort FROM t_mp_resources WHERE parentId = 0) b on a.id=b.id
- set a.nlevel=b.LEVEL,a.scort=b.scort;
- WHILE FOUND_ROWS()>0 DO
-  SET LEVEL=LEVEL+1;
-update t_mp_resources a inner join (
-   SELECT ID,LEVEL,scort FROM t_mp_resources 
-    WHERE nLevel=LEVEL-1) b on a.parentId=b.id
- set a.nlevel=b.LEVEL,a.scort=concat(b.scort,a.ID,',');
- END WHILE;
-END
-;;
-DELIMITER ;
+-- DROP PROCEDURE IF EXISTS `treeNodes`;
+-- DELIMITER ;;
+-- CREATE DEFINER=`root`@`%` PROCEDURE `treeNodes`()
+-- BEGIN
+--  DECLARE LEVEL INT ;
+--  Set LEVEL=0 ;
+--  update t_mp_resources a inner join (SELECT id,LEVEL,concat(',',ID,',') scort FROM t_mp_resources WHERE parentId = 0) b on a.id=b.id
+--  set a.nlevel=b.LEVEL,a.scort=b.scort;
+--  WHILE FOUND_ROWS()>0 DO
+--   SET LEVEL=LEVEL+1;
+-- update t_mp_resources a inner join (
+--    SELECT ID,LEVEL,scort FROM t_mp_resources 
+--     WHERE nLevel=LEVEL-1) b on a.parentId=b.id
+-- set a.nlevel=b.LEVEL,a.scort=concat(b.scort,a.ID,',');
+--  END WHILE;
+-- END
+-- ;;
+-- DELIMITER ;
