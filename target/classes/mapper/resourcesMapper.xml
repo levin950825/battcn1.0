@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.battcn.mapper.ResourcesMapper">
+	<!-- 回收策略为先进先出 --> <!-- 自动刷新时间60s --><!-- 最多缓存512个引用对象 -->
+	<!-- <cache eviction="FIFO" flushInterval="30000" size="512" readOnly="false" /> --> <!-- 只读 -->
+
+	<select id="findRes" parameterType="java.util.Map" resultType="com.battcn.entity.ResourcesEntity">
+		SELECT
+		id,
+		name,
+		parentId,
+		(select r.name from t_mp_resources r where r.id= t_mp_resources.parentId )
+		parentName,
+		type,
+		resUrl,
+		level,
+		icon,
+		description
+		from t_mp_resources where 1 = 1
+		<if test="roleId != null and roleId != '' and roleId != 0">
+			AND id in( select resId from t_mp_role_res where 1=1 and roleId = #{roleId})
+		</if>
+		<if test="userId != null and userId != '' and userId != 0">
+			AND id in( select resId from t_mp_user_res where 1=1 and userId = #{userId})
+		</if>
+		order by level
+	</select>
+
+
+
+	<select id="findResourcesByRoleId" resultType="com.battcn.entity.ResourcesEntity"
+		parameterType="java.lang.String">
+		SELECT
+		DISTINCT t1.*
+		FROM
+		t_mp_resources t1,
+		t_mp_role_res
+		t2,
+		t_mp_role t3
+		WHERE
+		t1.id = t2.resId
+		AND t2.roleId = t3.id
+		AND t2.roleId
+		= #{roleId}
+	</select>
+
+
+	<select id="findResourcessByMap" resultType="com.battcn.entity.ResourcesEntity"
+		parameterType="java.util.Map">
+		SELECT * FROM t_mp_resources WHERE id in
+		(SELECT DISTINCT resId FROM (SELECT resId FROM t_mp_user_res WHERE userId = #{userId}
+		UNION ALL
+		SELECT resId FROM t_mp_role_res WHERE roleId in (SELECT roleId FROM t_mp_user_role WHERE userId= #{userId})) tmp)
+		<if test="parentId != null and parentId != '' and parentId != 0">
+			AND parentId = #{parentId}
+		</if>
+	</select>
+
+
+	<delete id="deleteByRoleId" parameterType="java.lang.String">
+		delete from
+		t_mp_role_res where roleId = #{roleId}
+	</delete>
+	<delete id="deleteByUserId" parameterType="java.lang.String">
+		delete from
+		t_mp_user_res where userId = #{userId}
+	</delete>
+	
+	<delete id="deleteRoleByUserId" parameterType="java.lang.String">
+		delete from
+		t_mp_user_role where userId = #{userId}
+	</delete>
+	
+	
+
+	<insert id="batchAddRoleGroup" parameterType="java.util.List">
+		INSERT INTO t_mp_role_res (roleId,resId)
+		VALUES
+		<foreach collection="list" item="item" index="index" separator=",">
+			(#{item.roleId},#{item.resId})
+		</foreach>
+	</insert>
+	<insert id="batchAddUserGroup" parameterType="java.util.List">
+		INSERT INTO t_mp_user_res (userId,resId)
+		VALUES
+		<foreach collection="list" item="item" index="index" separator=",">
+			(#{item.userId},#{item.resId})
+		</foreach>
+	</insert>
+	
+
+	<select id="treeNodes" >
+         CALL treeNodes()
+    </select>
+
+
+
+</mapper>
