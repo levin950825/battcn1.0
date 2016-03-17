@@ -30,7 +30,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label">菜单类型：</label>
 				<div class="col-sm-8">
-					<select id="type" name="type" class="form-control m-b" tabindex="-1" onchange="but(${resources.type})">
+					<select id="type" name="type" class="form-control m-b" tabindex="-1" onchange="but()">
 							<option value="0">------ 目录 ------</option>
 							<option value="1">------ 菜单 ------</option>
 							<option value="2">------ 按扭 ------</option>
@@ -46,11 +46,12 @@
 						<span class="help-block m-b-none">
 				</div>
 			</div>
+			
 			<div class="form-group" id="divbut">
 				<label class="col-sm-3 control-label">选择</label>
 				<div class="col-sm-8">
 					<div id="but" class="doc-buttons">
-							
+						
 					</div>
 					<font color="red">可自定义填入html代码</font>
 					<span class="help-block m-b-none">
@@ -78,11 +79,10 @@
 
 
 <script type="text/javascript">
+var v = $("#type").val(CommnUtil.notNull("${resources.type}") ? "${resources.type}" : 0);
 
-$("#type").val(CommnUtil.notNull("${resources.type}") ? "${resources.type}" : 0);
-
-function but(v){
-	if(v==2){
+function but(){
+	if(v.val()==2){
 		showBut();
 	}else{
 		$("#divbut").css("display","none");
@@ -103,7 +103,7 @@ function showBut(){
 		bb.html('');
 		for ( var i = 0; i < data.length; i++) 
 		{
-			bb.append("<span onclick=\"toBut(this)\" id=\"span_"+data[i].id+"\">"+ data[i].buttom+"</span>");
+			bb.append("<span onclick=\"toBut(this)\" id=\"span_"+data[i].id+"\">"+ data[i].buttom+"</span> &nbsp;");
 		}
 	} else {
 		layer.msg("获取按扭列表失败！");
