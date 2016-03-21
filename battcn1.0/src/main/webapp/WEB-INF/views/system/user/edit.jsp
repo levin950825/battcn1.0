@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="ibox float-e-margins">
 	<div class="ibox-content">
 		<form class="form-horizontal m-t required-validate" id="userForm">
@@ -23,6 +24,7 @@
 				<label class="col-sm-3 control-label">密码：</label>
 				<div class="col-sm-8">
 					<input id="passWord" name="passWord"  class="form-control" type="text" value="${user.passWord}"
+						<c:if test="${user.passWord != null and user.passWord != ''}">disabled="disabled"</c:if>
 						validate="{required:true,messages:{required:'请填写密码'}}">
 						<span class="help-block m-b-none">
 				</div>

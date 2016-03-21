@@ -42,10 +42,10 @@ public class UserServiceImpl extends BaseServiceImpl<UserEntity>implements UserS
 			{
 				PasswordHelper passwordHelper = new PasswordHelper();
 				passwordHelper.encryptPassword(entity);
-				result = this.save(entity);
+				return this.save(entity);
 			} else
 			{
-				// 删除逻辑
+				result = this.update(entity);
 				this.resourcesMapper.deleteRoleByUserId(String.valueOf(entity.getId()));
 			}
 			if (txtGroupsSelect != null && txtGroupsSelect.length > 0)
@@ -58,7 +58,6 @@ public class UserServiceImpl extends BaseServiceImpl<UserEntity>implements UserS
 					userRoleMapper.insertSelective(record);
 				}
 			}
-			result = this.update(entity);
 		} catch (Exception e)
 		{
 			e.printStackTrace();
