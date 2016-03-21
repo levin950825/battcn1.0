@@ -118,7 +118,7 @@ public class LoginController {
 		if (SecurityUtils.getSubject().getSession() != null) {
 			SecurityUtils.getSubject().logout();
 		}
-		return "index";
+		return "redirect:/login.shtml";
 	}
 
 	@RequestMapping("install")
