@@ -180,6 +180,17 @@
 						烟火</li>
 					<li class="list-group-item "><span class="badge badge-info">10</span>
 						执璟</li>
+					<li class="list-group-item "><span class="badge badge-danger">50</span>
+						Joy</li>
+					<li class="list-group-item "><span class="badge badge-info">11</span>
+						土豆</li>
+					<li class="list-group-item "><span class="badge badge-info">5</span>
+						小齐</li>
+					<li class="list-group-item "><span class="badge badge-success">20</span>
+						江湖</li>
+					<li class="list-group-item "><span class="badge badge-info">5</span>
+						R</li>
+
 				</ul>
 			</div>
 		</div>
