@@ -3,7 +3,6 @@ package com.battcn.service.system.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.github.pagehelper.PageInfo;
 import com.battcn.entity.UserEntity;
 import com.battcn.entity.UserRoleEntity;
 import com.battcn.mapper.ResourcesMapper;
@@ -11,6 +10,7 @@ import com.battcn.mapper.UserRoleMapper;
 import com.battcn.service.BaseServiceImpl;
 import com.battcn.service.system.UserService;
 import com.battcn.util.PasswordHelper;
+import com.github.pagehelper.PageInfo;
 
 @Service
 public class UserServiceImpl extends BaseServiceImpl<UserEntity>implements UserService
@@ -33,7 +33,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserEntity>implements UserS
 		return this.queryPageForList();
 	}
 
-	public String saveOrUpdate(UserEntity entity, Long txtGroupsSelect[])
+	public String saveOrUpdate(UserEntity entity,Long txtGroupsSelect[])
 	{
 		String result = "";
 		try

@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50171
 Source Host           : localhost:3306
-Source Database       : battcnleaf
+Source Database       : battcn
 
 Target Server Type    : MYSQL
 Target Server Version : 50171
 File Encoding         : 65001
 
-Date: 2016-03-15 14:32:29
+Date: 2016-03-17 13:46:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -247,7 +247,7 @@ CREATE TABLE `t_mp_resources` (
   `nlevel` varchar(10) DEFAULT NULL,
   `scort` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='枫叶网---->资源表';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='枫叶网---->资源表';
 
 -- ----------------------------
 -- Records of t_mp_resources
@@ -267,9 +267,9 @@ INSERT INTO `t_mp_resources` VALUES ('12', '添加角色', '3', '2', null, '1', 
 INSERT INTO `t_mp_resources` VALUES ('13', '编辑角色', '3', '2', null, '2', null, '<button onclick=\"editRole()\" class=\"btn btn-success\" type=\"button\"><i class=\"fa fa-paste\"></i> 编辑</button>', '2016-01-29 12:14:15', '2', ',1,3,13,');
 INSERT INTO `t_mp_resources` VALUES ('14', '删除角色', '3', '2', null, '3', null, '<button onclick=\"delRole()\" class=\"btn btn-danger\" type=\"button\"><i class=\"fa fa-remove\"></i> 删除</button>', '2016-01-29 12:14:15', '2', ',1,3,14,');
 INSERT INTO `t_mp_resources` VALUES ('15', '分配权限', '3', '2', null, '4', null, '<button onclick=\"rolePermissions()\" class=\"btn btn-warning\" type=\"button\"><i class=\"fa fa-reorder\"></i> 分配权限</button>', '2016-01-29 12:14:15', '2', ',1,3,15,');
-INSERT INTO `t_mp_resources` VALUES ('16', '系统监管', '0', '0', NULL, '1', 'fa fa-columns icon', '系统监管', '2016-03-16 10:24:23', '0', ',16,');
-INSERT INTO `t_mp_resources` VALUES ('17', '实时监控', '16', '1', '/sys/monitor.shtml', '2', NULL, '实时监控', '2016-03-16 19:18:14', '1', ',16,17,');
-INSERT INTO `t_mp_resources` VALUES ('18', '告警列表', '16', '1', '/sys/list.shtml', '3', NULL, '告警列表', '2016-03-17 11:57:53', '1', ',16,18,');
+INSERT INTO `t_mp_resources` VALUES ('16', '系统监管', '0', '0', null, '1', 'fa fa-columns icon', '系统监管', '2016-03-16 10:24:23', '0', ',16,');
+INSERT INTO `t_mp_resources` VALUES ('17', '实时监控', '16', '1', '/sys/monitor.shtml', '2', null, '实时监控', '2016-03-16 19:18:14', '1', ',16,17,');
+INSERT INTO `t_mp_resources` VALUES ('18', '告警列表', '16', '1', '/sys/list.shtml', '3', null, '告警列表', '2016-03-17 11:57:53', '1', ',16,18,');
 
 -- ----------------------------
 -- Table structure for t_mp_role
@@ -318,8 +318,38 @@ INSERT INTO `t_mp_role_res` VALUES ('1', '12');
 INSERT INTO `t_mp_role_res` VALUES ('1', '13');
 INSERT INTO `t_mp_role_res` VALUES ('1', '14');
 INSERT INTO `t_mp_role_res` VALUES ('1', '15');
+INSERT INTO `t_mp_role_res` VALUES ('1', '16');
+INSERT INTO `t_mp_role_res` VALUES ('1', '17');
+INSERT INTO `t_mp_role_res` VALUES ('1', '18');
 INSERT INTO `t_mp_role_res` VALUES ('2', '6');
 INSERT INTO `t_mp_role_res` VALUES ('2', '7');
+
+-- ----------------------------
+-- Table structure for t_mp_server_info
+-- ----------------------------
+DROP TABLE IF EXISTS `t_mp_server_info`;
+CREATE TABLE `t_mp_server_info` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `cpuUsage` varchar(255) DEFAULT NULL,
+  `setCpuUsage` varchar(255) DEFAULT NULL,
+  `jvmUsage` varchar(255) DEFAULT NULL,
+  `setJvmUsage` varchar(255) DEFAULT NULL,
+  `ramUsage` varchar(255) DEFAULT NULL,
+  `setRamUsage` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `mark` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_mp_server_info
+-- ----------------------------
+INSERT INTO `t_mp_server_info` VALUES ('1', '18', '40', '49', '40', '71', '40', '1837307557@qq.com', '2016-02-25 18:07:02', '<font color=\"red\">JVM当前：49%,超出预设值 40%<br>内存当前：71%,超出预设值  40%</font>');
+INSERT INTO `t_mp_server_info` VALUES ('2', '3', '40', '50', '40', '71', '40', '1837307557@qq.com', '2016-02-25 18:08:03', '<font color=\"red\">JVM当前：50%,超出预设值 40%<br>内存当前：71%,超出预设值  40%</font>');
+INSERT INTO `t_mp_server_info` VALUES ('3', '5', '40', '50', '40', '70', '40', '1837307557@qq.com', '2016-02-25 18:09:02', '<font color=\"red\">JVM当前：50%,超出预设值 40%<br>内存当前：70%,超出预设值  40%</font>');
+INSERT INTO `t_mp_server_info` VALUES ('4', '5', '40', '52', '40', '69', '40', '1837307557@qq.com', '2016-02-25 18:10:03', '<font color=\"red\">JVM当前：52%,超出预设值 40%<br>内存当前：69%,超出预设值  40%</font>');
+INSERT INTO `t_mp_server_info` VALUES ('5', '2', '40', '52', '40', '68', '40', '1837307557@qq.com', '2016-02-25 18:11:02', '<font color=\"red\">JVM当前：52%,超出预设值 40%<br>内存当前：68%,超出预设值  40%</font>');
 
 -- ----------------------------
 -- Table structure for t_mp_userinfo

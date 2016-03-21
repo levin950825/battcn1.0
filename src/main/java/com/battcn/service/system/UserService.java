@@ -11,5 +11,5 @@ public interface UserService extends BaseService<UserEntity>
 
 	public PageInfo<UserEntity> queryUserForList();
 
-	public String saveOrUpdate(UserEntity entity, Long txtGroupsSelect[]);
+	public String saveOrUpdate(UserEntity entity,Long txtGroupsSelect[]);
 }
