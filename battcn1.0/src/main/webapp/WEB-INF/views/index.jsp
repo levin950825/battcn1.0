@@ -30,7 +30,7 @@
 								<li><a class="J_menuItem">个人资料</a></li>
 								<li><a class="J_menuItem">联系我们</a></li>
 								<li class="divider"></li>
-								<li><a href="${ctx}/login.shtml">安全退出</a></li>
+								<li><a href="${ctx}/logout.shtml">安全退出</a></li>
 							</ul>
 						</div>
 						<div class="logo-element">battcn</div>
@@ -79,7 +79,7 @@
 						<li class="J_tabCloseOther"><a>关闭其他选项卡</a></li>
 					</ul>
 				</div>
-				<a href="login.shtml" class="roll-nav roll-right J_tabExit"><i
+				<a href="${ctx}/logout.shtml" class="roll-nav roll-right J_tabExit"><i
 					class="fa fa fa-sign-out"></i> 退出</a>
 			</div>
 
