@@ -6,13 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.github.pagehelper.PageInfo;
-import com.github.pagehelper.StringUtil;
 import com.battcn.annotation.SystemLog;
 import com.battcn.controller.BaseController;
 import com.battcn.entity.UserEntity;
 import com.battcn.service.system.UserService;
-import com.battcn.util.CommonUtil;
+import com.github.pagehelper.PageInfo;
 
 @Controller
 @RequestMapping("/user/")
@@ -49,14 +47,9 @@ public class UserController extends BaseController
 	@RequestMapping("saveForm")
 	@ResponseBody
 	@SystemLog(module = "用户管理", methods = "添加用户")
-	public String saveUser(UserEntity Form,String txtGroupsSelect)
+	public String saveUser(UserEntity form,Long txtGroupsSelect[])
 	{
-		Long groupsSelect[] = null;
-		if(StringUtil.isNotEmpty(txtGroupsSelect))
-		{
-			groupsSelect = CommonUtil.stringArrayToLongArray(txtGroupsSelect.split(","));
-		}	
-		return this.userService.saveOrUpdate(Form,groupsSelect);
+		return this.userService.saveOrUpdate(form,txtGroupsSelect);
 	}
 
 	@RequestMapping("batchDelete")

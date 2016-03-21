@@ -89,7 +89,7 @@ function unselectedAll() {
 				<tr>
 					<td><select id="selectGroups" multiple="multiple"
 						class="input-large" name="selectGroups"
-						style="height: 100%; width: 150px">
+						style="height: 180px; width: 150px">
 						<c:forEach items="${userRole}" var="key">
 						<option value="${key.id}">${key.roleName}</option>
 						</c:forEach>
@@ -114,7 +114,7 @@ function unselectedAll() {
 					</td>
 					<td><select id="groupsForSelect"
 						multiple="multiple" class="input-large"
-						style="height: 100%; width: 150px">
+						style="height: 180px; width: 150px">
 						<c:forEach items="${role}" var="key">
 							<option value="${key.id}">${key.roleName}</option>
 						</c:forEach>
