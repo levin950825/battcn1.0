@@ -72,6 +72,7 @@
 	    		/treegrid/** = anon
 	    		/login.shtml = anon
 	    		/check.shtml = anon
+	    		/install.shtml = anon
 	    		/** = authc
 	        </value>  
     	</property>   
