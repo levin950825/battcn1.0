@@ -211,6 +211,10 @@
 						Sunny day</li>
 					<li class="list-group-item "><span class="badge badge-info">10</span>
 						念</li>
+					<li class="list-group-item "><span class="badge badge-info">10</span>
+						郭强</li>
+					<li class="list-group-item "><span class="badge badge-danger">50</span>
+						RyomaSaber</li>
 
 				</ul>
 			</div>
