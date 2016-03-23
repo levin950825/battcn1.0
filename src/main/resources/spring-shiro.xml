@@ -73,7 +73,7 @@
 	    		/login.shtml = anon
 	    		/check.shtml = anon
 	    		/install.shtml = anon
-	    		/** = authc
+	    		/** = sysUser,kickout,authc
 	        </value>  
     	</property>   
 	</bean>
