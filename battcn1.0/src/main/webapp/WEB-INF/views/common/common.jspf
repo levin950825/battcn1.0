@@ -55,27 +55,29 @@
 <script src="http://static.hxfruit.com/back/js/jquery.metadata.js"></script>
 
 
-
+<!-- 重要部分：不可删除 -->
 <script type="text/javascript" src="http://static.hxfruit.com/back/js/init/index.min.js"></script>
 <script type="text/javascript" src="http://static.hxfruit.com/back/js/init/IN.core.js"></script>
 <script type="text/javascript" src="http://static.hxfruit.com/back/js/init/IN.init.js"></script>
-
 <script src="http://static.hxfruit.com/back/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 <script src="http://static.hxfruit.com/back/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 <script src="http://static.hxfruit.com/back/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 
 
+<!-- 不需要报表统计可以去除：自行选择  -->
 <script src="http://static.hxfruit.com/common/echarts/esl/esl.js"></script>
 <script src="http://static.hxfruit.com/common/echarts/echarts-all.js"></script>
 
 
 <script type="text/javascript" src="${ctx}/common/common.js"></script>
-<script type="text/javascript" src="${ctx}/lib/FileSaver.min.js"></script>
-<script type="text/javascript" src="${ctx}/lib/html2canvas.min.js"></script>
-<script type="text/javascript" src="${ctx}/lib/jspdf.min.js"></script>
-<script type="text/javascript" src="${ctx}/lib/jspdf.plugin.autotable.js"></script>
-<script type="text/javascript" src="${ctx}/lib/tableExport.js"></script>
+<!-- 通过JS离线导出当前页面数据的excel文件：不需要可以自行删除 -->
+<script type="text/javascript" src="${ctx}/common/export/FileSaver.min.js"></script>
+<script type="text/javascript" src="${ctx}/common/export/html2canvas.min.js"></script>
+<script type="text/javascript" src="${ctx}/common/export/jspdf.min.js"></script>
+<script type="text/javascript" src="${ctx}/common/export/jspdf.plugin.autotable.js"></script>
+<script type="text/javascript" src="${ctx}/common/export/tableExport.js"></script>
 
+<!-- tree：重要  -->
 <link rel="stylesheet" href="http://static.hxfruit.com/back/treegrid/css/jquery.treegrid.css">
 <script type="text/javascript" src="http://static.hxfruit.com/back/treegrid/js/jquery.treegrid.js"></script>
 <script type="text/javascript" src=http://static.hxfruit.com/back/treegrid/js/jquery.treegrid.bootstrap3.js"></script>
