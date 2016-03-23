@@ -307,7 +307,7 @@
 			var html = '<div class="alert alert-warning" id="loadImg">'
 					+ '<button type="button" class="close" data-dismiss="alert">'
 					+ '<i class="ace-icon fa fa-times"></i></button><div style="text-align:center">'
-					+ '<img src="http://static.hxfruit.com/back/img/loading.gif"/><div>'
+					+ '<img src="http://static.battcn.com/back/img/loading.gif"/><div>'
 					+ '</div>';
 			return html;
 		},

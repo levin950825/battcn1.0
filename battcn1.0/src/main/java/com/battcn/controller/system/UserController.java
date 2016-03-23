@@ -91,7 +91,6 @@ public class UserController extends BaseController
 			ModelMap model) throws IOException
 	{
 		Result result = new Result();
-		String error = "";
 		MultipartFile file = null;
 		Map<String, MultipartFile> file2 = request.getFileMap();
 		String path = "";
@@ -101,7 +100,7 @@ public class UserController extends BaseController
 		}
 		if (file == null || file.isEmpty())
 		{
-			error = "文件太小！";
+			result.msg = "文件太小！";
 		} else
 		{
 			result.avatarUrls = new ArrayList<String>();

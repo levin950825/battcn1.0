@@ -16,7 +16,6 @@
 				<ul class="nav" id="side-menu">
 					<li class="nav-header">
 						<div class="dropdown profile-element">
-						<!-- ${ctx}/${USER_SESSION_KEY.photo} -->
 							<span><img alt="image" class="img-circle"
 								src="${ctx}/${USER_SESSION_KEY.photo}" width="64px" height="64px"/></span> <a
 								data-toggle="dropdown" class="dropdown-toggle" href="#"> <span

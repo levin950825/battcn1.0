@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>battcn - 登录</title>
-    <link href="http://static.hxfruit.com/back/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="http://static.hxfruit.com/back/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-	<link href="http://static.hxfruit.com/back/css/animate.min.css" rel="stylesheet">
-	<link href="http://static.hxfruit.com/back/css/style.min.css?v=4.0.0" rel="stylesheet">
-	<link href="http://static.hxfruit.com/back/css/login.min.css" rel="stylesheet">
+    <link href="http://static.battcn.com/back/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="http://static.battcn.com/back/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+	<link href="http://static.battcn.com/back/css/animate.min.css" rel="stylesheet">
+	<link href="http://static.battcn.com/back/css/style.min.css?v=4.0.0" rel="stylesheet">
+	<link href="http://static.battcn.com/back/css/login.min.css" rel="stylesheet">
     <!--[if lt IE 8]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->

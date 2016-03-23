@@ -1,9 +1,9 @@
 function fullAvatarEditor() {
 	var id = 'fullAvatarEditor' // flash文件的ID
 		
-	var file = 'http://static.battcn.com/back/plugins/fullavatareditor/scripts/fullAvatarEditor.swf'; // flash文件的路径
+	var file = rootPath+'/common/plugins/fullavatareditor/scripts/fullAvatarEditor.swf'; // flash文件的路径
 	var version = "10.1.0"; // 播放该flash所需的最低版本
-	var expressInstall = 'http://static.battcn.com/back/plugins/fullavatareditor/scripts/expressInstall.swf'; // expressInstall.swf的路径
+	var expressInstall = rootPath+'/common/plugins/fullavatareditor/scripts/expressInstall.swf'; // expressInstall.swf的路径
 	var width = 630; // flash文件的宽度
 	var height = 430; // flash文件的高度
 	var container = id; // 装载flash文件的容器(如div)的id
