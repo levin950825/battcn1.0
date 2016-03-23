@@ -73,12 +73,10 @@
 <script type="text/javascript" src="${ctx}/lib/jspdf.min.js"></script>
 <script type="text/javascript" src="${ctx}/lib/jspdf.plugin.autotable.js"></script>
 <script type="text/javascript" src="${ctx}/lib/tableExport.js"></script>
-<%-- <script type="text/javascript" src="${ctx}/lib/bootstrap-treeview.js"></script> --%>
 
 <link rel="stylesheet" href="${ctx}/treegrid/css/jquery.treegrid.css">
 <script type="text/javascript" src="${ctx}/treegrid/js/jquery.treegrid.js"></script>
 <script type="text/javascript" src="${ctx}/treegrid/js/jquery.treegrid.bootstrap3.js"></script>
-
 
 
 
