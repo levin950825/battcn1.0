@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +16,9 @@
 				<ul class="nav" id="side-menu">
 					<li class="nav-header">
 						<div class="dropdown profile-element">
+						<!-- ${ctx}/${USER_SESSION_KEY.photo} -->
 							<span><img alt="image" class="img-circle"
-								src="http://static.hxfruit.com/back/img/profile_small.jpg" /></span> <a
+								src="${ctx}/${USER_SESSION_KEY.photo}" width="64px" height="64px"/></span> <a
 								data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
 								class="clear"> <span class="block m-t-xs"><strong
 										class="font-bold">${USER_SESSION_KEY.userName}</strong></span> <span
@@ -25,7 +26,7 @@
 							</span>
 							</a>
 							<ul class="dropdown-menu animated fadeInRight m-t-xs">
-								<li><a class="J_menuItem">修改头像</a>
+								<li><a class="J_menuItem" href="${ctx}/user/profile.shtml">修改头像</a>
 								</li>
 								<li><a class="J_menuItem">个人资料</a></li>
 								<li><a class="J_menuItem">联系我们</a></li>

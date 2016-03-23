@@ -34,7 +34,20 @@ public class UserEntity implements java.io.Serializable
 	private String description;
 	@Column(name = "date")
 	private String date;
+
+	private String photo;
+
 	// @Transient表示注销改字段
+
+	public String getPhoto()
+	{
+		return photo;
+	}
+
+	public void setPhoto(String photo)
+	{
+		this.photo = photo;
+	}
 
 	public Long getId()
 	{
