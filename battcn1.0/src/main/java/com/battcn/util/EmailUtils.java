@@ -22,14 +22,7 @@ public class EmailUtils
 
 	public static void main(String[] args) throws Exception
 	{
-
-		String centent = "<p>&nbsp;&nbsp;&nbsp;尊敬的唐亚峰，您已经注册成为鏖战八方社区的会员，<a style='color:red' href='http://www.baidu.com'>点击激活</a>，以便我们给你授权！！</p>";
-		
-		
-		
-		
-		sendMail("memmsc@163.com", "yafeng.tang@zoomy-media.com", "memmsc@163.com", "xiongfei", "账号授权激活", centent);
-		
+		sendMail("发送邮箱", "接收邮箱", "发送邮箱", "发送邮箱密码", "标题", "内容");
 	}
 
 	/**
