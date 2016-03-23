@@ -366,14 +366,15 @@ CREATE TABLE `t_mp_userinfo` (
   `tel` varchar(24) DEFAULT NULL COMMENT '手机号码',
   `description` varchar(100) DEFAULT NULL COMMENT '介绍',
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
+  `photo` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='枫叶网---->用户信息表';
 
 -- ----------------------------
 -- Records of t_mp_userinfo
 -- ----------------------------
-INSERT INTO `t_mp_userinfo` VALUES ('1', '秋殇', 'admin', '9c6c9e22ae8c773c8f07a75b28563152', '1', 'a122080ba7afebf036ed3c811c7880f9', '', '', null, '2016-03-15 14:31:54');
-INSERT INTO `t_mp_userinfo` VALUES ('16', '测试账号密码123', 'test', '42ce175f3fbc4b6ea58847508162a89e', '1', 'c6845b43c38a916abcc501a41706346e', 'test@163.com', '111', null, '2016-03-21 17:54:44');
+INSERT INTO `t_mp_userinfo` VALUES ('1', '秋殇', 'admin', '9c6c9e22ae8c773c8f07a75b28563152', '1', 'a122080ba7afebf036ed3c811c7880f9', '', '', null, '2016-03-15 14:31:54', 'upload/files/201603/2311350619jk.jpg');
+INSERT INTO `t_mp_userinfo` VALUES ('16', '测试账号密码123', 'test', '42ce175f3fbc4b6ea58847508162a89e', '1', 'c6845b43c38a916abcc501a41706346e', 'test@163.com', '111', null, '2016-03-21 17:54:44', null);
 
 -- ----------------------------
 -- Table structure for t_mp_user_res
