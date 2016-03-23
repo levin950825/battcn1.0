@@ -14,13 +14,13 @@
 <meta http-equiv="Expires" CONTENT="0">
 <meta name="renderer" content="webkit">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<link rel="icon" type="image/png"	href="http://static.hxfruit.com/common/favicon.png">
+<link rel="icon" type="image/png"	href="http://static.battcn.com/common/favicon.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="battcn" />
-<link rel="apple-touch-icon-precomposed" href="http://static.hxfruit.com/common/favicon.png">
-<meta name="msapplication-TileImage" content="http://static.hxfruit.com/common/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="http://static.battcn.com/common/favicon.png">
+<meta name="msapplication-TileImage" content="http://static.battcn.com/common/favicon.png">
 <meta name="keywords" content="battcn管理系统,battcn,鏖战网,鏖战八方,鏖战论坛,集成,最新,技术,通用性,稳定性,快速性,开发,系统,开源,SSM,SpringMVC,Spring,Mybatis,BootStrap,BootStrapTable">
 <meta name="author" content="www.battcn.com" />
 <meta name="description" content="battcn管理系统,集成最新技术框架,以最通用性,稳定性,快速性开发系统,最新技术 springMVC4.2.2统+spring4.2.2+,mybaits3.2.8+MySQL5.6,前端最新流行的技术,这是一个属于大家的 学习网，自由评论回复，开源  battcn 网源码下载！！！">
@@ -28,45 +28,45 @@
 
 
 <!-- 重要部分：不可删除  -->
-<link href="http://static.hxfruit.com/back/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="http://static.hxfruit.com/back/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="http://static.hxfruit.com/back/css/animate.min.css" rel="stylesheet">
-<link href="http://static.hxfruit.com/back/css/style.min.css?v=4.0.0" rel="stylesheet">
-<link href="http://static.hxfruit.com/back/css/plugins/iCheck/custom.css" rel="stylesheet">
-<link href="http://static.hxfruit.com/back/css/smartMenu/smartMenu.css" rel="stylesheet">
+<link href="http://static.battcn.com/back/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+<link href="http://static.battcn.com/back/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="http://static.battcn.com/back/css/animate.min.css" rel="stylesheet">
+<link href="http://static.battcn.com/back/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="http://static.battcn.com/back/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="http://static.battcn.com/back/css/smartMenu/smartMenu.css" rel="stylesheet">
 
-<link href="http://static.hxfruit.com/back/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+<link href="http://static.battcn.com/back/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
 
-<script src="http://static.hxfruit.com/back/js/jquery.min.js?v=2.1.4"></script>
-<script src="http://static.hxfruit.com/back/js/bootstrap.min.js?v=3.3.5"></script>
-<script src="http://static.hxfruit.com/back/js/content.min.js?v=1.0.0"></script>
+<script src="http://static.battcn.com/back/js/jquery.min.js?v=2.1.4"></script>
+<script src="http://static.battcn.com/back/js/bootstrap.min.js?v=3.3.5"></script>
+<script src="http://static.battcn.com/back/js/content.min.js?v=1.0.0"></script>
 
-<script src="http://static.hxfruit.com/back/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="http://static.hxfruit.com/back/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="http://static.hxfruit.com/back/js/plugins/toastr/toastr.min.js"></script>
-<script src="http://static.hxfruit.com/back/js/plugins/iCheck/icheck.min.js"></script>
+<script src="http://static.battcn.com/back/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="http://static.battcn.com/back/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="http://static.battcn.com/back/js/plugins/toastr/toastr.min.js"></script>
+<script src="http://static.battcn.com/back/js/plugins/iCheck/icheck.min.js"></script>
 
 
-<script src="http://static.hxfruit.com/back/js/plugins/layer/layer.min.js"></script>
-<script src="http://static.hxfruit.com/back/js/smartMenu/jquery-smartMenu.js"></script>
-<script src="http://static.hxfruit.com/common/layer-v2.1/layer/layer.js"></script>
-<script src="http://static.hxfruit.com/back/js/hplus.min.js?v=4.0.0"></script>
-<script src="http://static.hxfruit.com/back/js/jquery-validation/jquery.validate.min.js"></script>
-<script src="http://static.hxfruit.com/back/js/jquery.metadata.js"></script>
+<script src="http://static.battcn.com/back/js/plugins/layer/layer.min.js"></script>
+<script src="http://static.battcn.com/back/js/smartMenu/jquery-smartMenu.js"></script>
+<script src="http://static.battcn.com/common/layer-v2.1/layer/layer.js"></script>
+<script src="http://static.battcn.com/back/js/hplus.min.js?v=4.0.0"></script>
+<script src="http://static.battcn.com/back/js/jquery-validation/jquery.validate.min.js"></script>
+<script src="http://static.battcn.com/back/js/jquery.metadata.js"></script>
 
 
 <!-- 重要部分：不可删除 -->
-<script type="text/javascript" src="http://static.hxfruit.com/back/js/init/index.min.js"></script>
-<script type="text/javascript" src="http://static.hxfruit.com/back/js/init/IN.core.js"></script>
-<script type="text/javascript" src="http://static.hxfruit.com/back/js/init/IN.init.js"></script>
-<script src="http://static.hxfruit.com/back/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-<script src="http://static.hxfruit.com/back/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-<script src="http://static.hxfruit.com/back/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="http://static.battcn.com/back/js/init/index.min.js"></script>
+<script type="text/javascript" src="http://static.battcn.com/back/js/init/IN.core.js"></script>
+<script type="text/javascript" src="http://static.battcn.com/back/js/init/IN.init.js"></script>
+<script src="http://static.battcn.com/back/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="http://static.battcn.com/back/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="http://static.battcn.com/back/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 
 
 <!-- 不需要报表统计可以去除：自行选择  -->
-<script src="http://static.hxfruit.com/common/echarts/esl/esl.js"></script>
-<script src="http://static.hxfruit.com/common/echarts/echarts-all.js"></script>
+<script src="http://static.battcn.com/common/echarts/esl/esl.js"></script>
+<script src="http://static.battcn.com/common/echarts/echarts-all.js"></script>
 
 
 <script type="text/javascript" src="${ctx}/common/common.js"></script>
@@ -78,9 +78,9 @@
 <script type="text/javascript" src="${ctx}/common/export/tableExport.js"></script>
 
 <!-- tree：重要  -->
-<link rel="stylesheet" href="http://static.hxfruit.com/back/treegrid/css/jquery.treegrid.css">
-<script type="text/javascript" src="http://static.hxfruit.com/back/treegrid/js/jquery.treegrid.js"></script>
-<script type="text/javascript" src=http://static.hxfruit.com/back/treegrid/js/jquery.treegrid.bootstrap3.js"></script>
+<link rel="stylesheet" href="http://static.battcn.com/back/treegrid/css/jquery.treegrid.css">
+<script type="text/javascript" src="http://static.battcn.com/back/treegrid/js/jquery.treegrid.js"></script>
+<script type="text/javascript" src="http://static.battcn.com/back/treegrid/js/jquery.treegrid.bootstrap3.js"></script>
 
 
 
@@ -147,7 +147,7 @@ form .input-group{margin-top: 4px;}
 	}
 	
 	layer.config({
-		extend : [ 'http://static.hxfruit.com/common/layer-v2.1/layer/skin/seaning/style.css' ], //加载新皮肤
+		extend : [ 'http://static.battcn.com/common/layer-v2.1/layer/skin/seaning/style.css' ], //加载新皮肤
 		fix : false,// 用于设定层是否不随滚动条而滚动，固定在可视区域。
 		skin : 'layer-ext-myskin' //一旦设定，所有弹层风格都采用此主题。
 	});

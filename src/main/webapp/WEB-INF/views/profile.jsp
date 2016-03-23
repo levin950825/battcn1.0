@@ -40,9 +40,8 @@
 		</div>
 	</div>
 </div>
-
-<script type="text/javascript" src="${ctx}/battcn1.0/common/plugins/fullavatareditor/scripts/swfobject.js"></script>
-<script type="text/javascript" src="${ctx}/battcn1.0/common/plugins/fullavatareditor/scripts/fullAvatarEditor.js"></script>
-<script type="text/javascript" src="${ctx}/battcn1.0/common/plugins/fullavatareditor/scripts/jQuery.Cookie.js"></script>
-<script type="text/javascript" src="${ctx}/battcn1.0/common/plugins/fullavatareditor/scripts/test.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/common/plugins/fullavatareditor/scripts/swfobject.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/common/plugins/fullavatareditor/scripts/fullAvatarEditor.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/common/plugins/fullavatareditor/scripts/jQuery.Cookie.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/common/plugins/fullavatareditor/scripts/test.js"></script>
 
