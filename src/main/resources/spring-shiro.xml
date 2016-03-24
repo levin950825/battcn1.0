@@ -39,11 +39,10 @@
 	
      <bean id="sysUserFilter" class="com.battcn.shiro.filter.SysUserFilter"/>
     
-    
+      <bean id="forceLogoutFilter" class="com.battcn.shiro.filter.ForceLogoutFilter"/>
 	 <bean id="kickoutSessionControlFilter" class="com.battcn.shiro.filter.KickoutSessionControlFilter">
         <property name="cacheManager" ref="shiroCacheManager"/>
         <property name="sessionManager" ref="sessionManager"/>
-
         <property name="kickoutAfter" value="false"/>
         <property name="maxSession" value="1"/>
         <property name="kickoutUrl" value="/login.shtml"/>
@@ -61,6 +60,7 @@
             <util:map>
                 <entry key="sysUser" value-ref="sysUserFilter"/>
                 <entry key="kickout" value-ref="kickoutSessionControlFilter"/>
+                <entry key="forceLogout" value-ref="forceLogoutFilter"/>
             </util:map>
         </property>
          <property name="filterChainDefinitions">  
@@ -73,7 +73,7 @@
 	    		/login.shtml = anon
 	    		/check.shtml = anon
 	    		/install.shtml = anon
-	    		/** = sysUser,kickout,authc
+	    		/** = forceLogout,sysUser,kickout,authc
 	        </value>  
     	</property>   
 	</bean>
