@@ -80,12 +80,30 @@
 						<div class="panel-group" id="version">
 							<div class="panel panel-default">
 								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#version" href="#v12">v1.2.0</a>
+										<code class="my-pull-right">2016.03.24</code>
+									</h4>
+								</div>
+								<div id="v12" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<ol>
+											<li>修改Shiro权限管理</li>
+											<li>新增头像上传（裁剪,配色,自拍,旋转）</li>
+											<li>新增Session管理,可以在线踢人</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						
+							<div class="panel panel-default">
+								<div class="panel-heading">
 									<h5 class="panel-title">
-										<a data-toggle="collapse" data-parent="#version" href="#v20">v2.0.0</a>
-										<code class="my-pull-right">2015.10.21</code>
+										<a data-toggle="collapse" data-parent="#version" href="#v11">v1.1.0</a>
+										<code class="my-pull-right">2016.02.21</code>
 									</h5>
 								</div>
-								<div id="v20" class="panel-collapse collapse">
+								<div id="v11" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ol>
 											<li>升级bootstrap到最新版本3.3.5；</li>
@@ -109,11 +127,11 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#version" href="#v11">v1.0.0</a>
+										<a data-toggle="collapse" data-parent="#version" href="#v10">v1.0.0</a>
 										<code class="my-pull-right">2015.12.26</code>
 									</h4>
 								</div>
-								<div id="v11" class="panel-collapse collapse in">
+								<div id="v10" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ol>
 											<li>battcn正式发布。</li>
