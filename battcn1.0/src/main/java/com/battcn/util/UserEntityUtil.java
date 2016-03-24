@@ -14,6 +14,7 @@ public class UserEntityUtil
 	 * 用户信息key
 	 */
 	public static final String USER_SESSION_KEY = "USER_SESSION_KEY";
+	public static final String USER_SESSION_LOGOUT_LOGOUT_KEY = "USER_SESSION_LOGOUT_LOGOUT_KEY";
 
 	/**
 	 * 从session中获取当前登录的用户信息

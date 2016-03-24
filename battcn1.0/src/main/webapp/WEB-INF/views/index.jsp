@@ -46,6 +46,9 @@
 								</c:forEach>
 							</ul></li>
 					</c:forEach>
+					<!-- 该功能可选：方便管理登陆用户而已 -->
+					<li><a title="Session管理" class="J_menuItem"
+										href="${ctx}/session/list.shtml"><i class="fa fa-database"></i>Session管理</a></li>
 				</ul>
 			</div>
 		</nav>

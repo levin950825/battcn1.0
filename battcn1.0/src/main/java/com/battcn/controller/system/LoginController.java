@@ -45,7 +45,13 @@ public class LoginController {
 	UserService userService;
 
 	@RequestMapping({ "login", "/" })
-	public String login() {
+	public String login(HttpServletRequest request) 
+	{
+		if(request.getParameter("forceLogout") != null) 
+		{  
+		    request.setAttribute("LOGIN_ERROR_CODE", LoginConstant.LOGIN_ERROR_CODE_100004);
+		    request.setAttribute("LOGIN_ERROR_MESSAGE", LoginConstant.LOGIN_ERROR_MESSAGE_FORCELOGOUT);
+		}   
 		return "login";
 	}
 

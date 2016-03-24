@@ -215,7 +215,14 @@
 						郭强</li>
 					<li class="list-group-item "><span class="badge badge-danger">50</span>
 						RyomaSaber</li>
-
+					<li class="list-group-item "><span class="badge badge-info">5</span>
+						卢正君</li>
+					<li class="list-group-item "><span class="badge badge-info">7</span>
+						江涛</li>
+					<li class="list-group-item "><span class="badge badge-info">5</span>
+						陆鸦</li>
+					<li class="list-group-item "><span class="badge badge-info">5</span>
+						阿毛</li>
 				</ul>
 			</div>
 		</div>

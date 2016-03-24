@@ -18,8 +18,8 @@ public class SysUserFilter extends PathMatchingFilter
 	@Override
 	protected boolean onPreHandle(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception
 	{
-		String userName = (String) SecurityUtils.getSubject().getPrincipal();
-		request.setAttribute("user", userService.findByLoginName(userName));
+		//String userName = (String) SecurityUtils.getSubject().getPrincipal();
+		//request.setAttribute("user", userService.findByLoginName(userName));
 		return true;
 	}
 }
