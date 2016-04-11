@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="wrapper wrapper-content animated fadeInRight"
 	style="height: 100%">
@@ -9,11 +10,12 @@
 					${key.description}
 				</c:forEach>
 			</div>
-			<form role="form" class="form-inline">
+			<form role="form" class="form-inline" id="userSearchForm">
 				<div class="input-group">
-					<input type="text" placeholder="请输入角色名" name="roleName"
+					<input type="text" placeholder="请输入账号" name="accountName" id="accountName"
 						class="input form-control"> <span class="input-group-btn">
-						<button type="button" class="btn btn btn-primary">
+						<button type="button" class="btn btn btn-primary"
+							onclick="javascript:userSearch();">
 							<i class="fa fa-search"></i> 搜索
 						</button>
 					</span>
@@ -38,9 +40,8 @@
 			return row.id
 		});
 	}
-	
-	function userPermissions()
-	{
+
+	function userPermissions() {
 		var cbox = getUserIdSelections();
 		if (cbox == "") {
 			layer.msg("请选择角色项！！");
@@ -52,7 +53,7 @@
 		}
 		battcn.ajaxOpen({
 			title : '分配权限',
-			href : rootPath + '/resources/permissions.shtml?userId='+cbox,
+			href : rootPath + '/resources/permissions.shtml?userId=' + cbox,
 			width : '60%',
 			height : '80%',
 			okhandler : function() {
@@ -60,8 +61,7 @@
 			}
 		});
 	}
-	
-	
+
 	function delUser() {
 		var cbox = getUserIdSelections();
 		if (cbox == "") {
@@ -109,11 +109,28 @@
 			}
 		});
 	}
-
-	function enabledFormatter(value) {
-		return value == 1 ? '启用' : '禁用';
+	
+	//查询:目前只用一个参数,如果多个 请用 $("#A").val() !='' ||$("#B").val() !=''....
+	function userSearch() {
+		$('#userTable').bootstrapTable('refresh');
 	}
-
+	//重写参数传递
+	function queryParams(params) {
+		var accountName = $("#accountName").val();
+		var pageSize = params.limit;
+		var sort = params.sort;
+		var offset = params.offset;
+		var order = params.order;
+		var pageNum = offset / pageSize + 1;
+		return {
+			pageSize : pageSize,
+			pageNum : pageNum,
+			sort : sort,
+			order : order,
+			accountName : accountName
+		}
+	}
+	
 	$('#userTable').bootstrapTable({
 		url : rootPath + '/user/queryUserForList.shtml',
 		height : '100%',
@@ -172,6 +189,9 @@
 			align : 'center',
 			valign : 'middle',
 			sortable : true
-		}]
+		} ]
 	});
+	function enabledFormatter(value) {
+		return value == 1 ? '启用' : '禁用';
+	}
 </script>

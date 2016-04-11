@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.jdbc.ScriptRunner;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
@@ -21,10 +23,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.jdbc.ScriptRunner;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.battcn.annotation.SystemLog;
 import com.battcn.constant.LoginConstant;
 import com.battcn.entity.ResourcesEntity;
 import com.battcn.entity.UserEntity;
@@ -44,7 +44,7 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 
-	@RequestMapping({ "login", "/" })
+	@RequestMapping(value = "login", method = RequestMethod.GET, produces = "text/html; charset=utf-8")
 	public String login(HttpServletRequest request) 
 	{
 		if(request.getParameter("forceLogout") != null) 
@@ -61,11 +61,8 @@ public class LoginController {
 	}
 
 	@RequestMapping("index")
-	public String index(Model model) {
+	public String index(Model model,HttpServletRequest request) {
 		UserEntity infoForm = UserEntityUtil.getUserFromSession();
-		if (infoForm == null) {
-			return "redirect:/";
-		}
 		String userId = String.valueOf(infoForm.getId());
 		if (StringUtils.isNotBlank(userId)) {
 			Map<String, String> queryMap = new HashMap<String, String>();
@@ -78,8 +75,7 @@ public class LoginController {
 		return "index";
 	}
 
-	@RequestMapping("check")
-	@SystemLog(module = "用户管理", methods = "用户登陆")
+	@RequestMapping(value = "login", method = RequestMethod.POST, produces = "text/html; charset=utf-8")
 	public String login(HttpServletRequest request, HttpServletResponse response, UserEntity user) {
 		// 想要得到 SecurityUtils.getSubject() 的对象．．访问地址必须跟shiro的拦截地址内．不然后会报空指针
 		Subject sub = SecurityUtils.getSubject();
@@ -97,8 +93,7 @@ public class LoginController {
 		} catch (ExcessiveAttemptsException e) {
 			token.clear();
 			request.setAttribute("LOGIN_ERROR_CODE", LoginConstant.LOGIN_ERROR_CODE_100003);
-			request.setAttribute("LOGIN_ERROR_MESSAGE",
-					"账号：" + user.getUserName() + LoginConstant.LOGIN_ERROR_MESSAGE_MAXERROR);
+			request.setAttribute("LOGIN_ERROR_MESSAGE","账号：" + user.getUserName() + LoginConstant.LOGIN_ERROR_MESSAGE_MAXERROR);
 			return "login";
 		} catch (AuthenticationException e) {
 			token.clear();
@@ -119,13 +114,18 @@ public class LoginController {
 	 * @param result
 	 * @return
 	 */
-	@RequestMapping(value = "logout")
-	public String logout(HttpServletRequest request, HttpServletResponse response, Model model) {
-		if (SecurityUtils.getSubject().getSession() != null) {
-			SecurityUtils.getSubject().logout();
-		}
+	@RequestMapping("logout")
+	public String logout() {
+		SecurityUtils.getSubject().logout();
 		return "redirect:/login.shtml";
 	}
+	@RequestMapping("denied")
+	public String denied()
+	{
+		return "denied";
+	}
+	
+	
 
 	@RequestMapping("install")
 	public String install() throws Exception {

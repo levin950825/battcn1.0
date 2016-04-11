@@ -9,7 +9,7 @@ public interface UserService extends BaseService<UserEntity>
 
 	public UserEntity findByLoginName(String accountName);
 
-	public PageInfo<UserEntity> queryUserForList();
+	public PageInfo<UserEntity> queryUserForList(UserEntity entity);
 
 	public String saveOrUpdate(UserEntity entity,Long txtGroupsSelect[]);
 }

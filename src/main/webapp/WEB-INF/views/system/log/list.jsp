@@ -62,6 +62,11 @@
 				align : 'center',
 				valign : 'middle'
 			}, {
+				field : 'url',
+				title : '请求地址',
+				align : 'center',
+				valign : 'middle'
+			}, {
 				field : 'ip',
 				title : 'IP',
 				align : 'center',

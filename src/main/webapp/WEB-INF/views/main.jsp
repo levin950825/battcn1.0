@@ -78,6 +78,26 @@
 				<div class="ibox-content no-padding">
 					<div class="panel-body">
 						<div class="panel-group" id="version">
+						
+						
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#version" href="#v13">v1.3.0</a>
+										<code class="my-pull-right">2016.03.31</code>
+									</h4>
+								</div>
+								<div id="v13" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<ol>
+											<li>新增Log记录URL</li>
+											<li>修改SysLog无法记录的BUG</li>
+											<li>修改系统监控无法发送邮件的BUG</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
@@ -85,7 +105,7 @@
 										<code class="my-pull-right">2016.03.24</code>
 									</h4>
 								</div>
-								<div id="v12" class="panel-collapse collapse in">
+								<div id="v12" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ol>
 											<li>修改Shiro权限管理</li>
@@ -212,7 +232,31 @@
 			</div>
 		</div>
 	</div>
-	
+	<div class="col-sm-2">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>捐助列表</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+					</a> <a class="close-link"> <i class="fa fa-times"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content no-padding">
+				<ul class="list-group">
+					<li class="list-group-item"><span class="badge badge-primary">5</span>
+						可乐加冰</li>
+					<li class="list-group-item "><span class="badge badge-primary">5</span>
+						捷</li>
+					<li class="list-group-item "><span class="badge badge-info">10</span>
+						流星</li>
+					<li class="list-group-item "><span class="badge badge-primary">6.8</span>
+						iMike</li>
+						  
+				</ul>
+			</div>
+		</div>
+	</div>
 	<div class="col-sm-2">
 		<div class="ibox float-e-margins">
 			<div class="ibox-title">

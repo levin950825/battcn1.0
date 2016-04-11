@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +41,7 @@ public class UserController extends BaseController
 	private FileRepository fileRepository;
 
 	@RequestMapping("list")
+	@SystemLog(module = "用户管理", methods = "查询用户")
 	public String main(Model model)
 	{
 		model.addAttribute("res", findResByUser());
@@ -58,9 +60,15 @@ public class UserController extends BaseController
 
 	@RequestMapping("queryUserForList")
 	@ResponseBody
-	public PageInfo<UserEntity> queryUserForList()
+	public PageInfo<UserEntity> queryUserForList(String accountName)
 	{
-		return this.userService.queryUserForList();
+		UserEntity entity = null;
+		if(StringUtils.isNoneEmpty(accountName))
+		{
+			entity = new UserEntity();
+			entity.setAccountName(accountName);
+		}
+		return this.userService.queryUserForList(entity);
 	}
 
 	@RequestMapping("saveForm")

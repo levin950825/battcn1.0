@@ -29,7 +29,8 @@ public class LogEntity implements java.io.Serializable
 	private String ip;
 	@Column(name = "description")
 	private String description;
-	
+	@Column(name = "url")
+	private String url;
 	@OrderBy("desc")
 	@Column(name = "date")
 	private String date;
@@ -112,6 +113,16 @@ public class LogEntity implements java.io.Serializable
 	public void setDate(String date)
 	{
 		this.date = date;
+	}
+
+	public String getUrl()
+	{
+		return url;
+	}
+
+	public void setUrl(String url)
+	{
+		this.url = url;
 	}
 
 }

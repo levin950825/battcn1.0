@@ -1,11 +1,8 @@
 package com.battcn.shiro;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -15,15 +12,14 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.battcn.entity.ResourcesEntity;
-import com.battcn.entity.RoleEntity;
 import com.battcn.entity.UserEntity;
 import com.battcn.service.system.ResourcesService;
-import com.battcn.service.system.RoleService;
 import com.battcn.service.system.UserService;
 import com.battcn.util.UserEntityUtil;
 
@@ -36,43 +32,57 @@ public class MyRealm extends AuthorizingRealm
 	@Autowired
 	private ResourcesService resourcesService;
 	@Autowired
-	private RoleService roleService;
-	@Autowired
 	private UserService userService;
 
 	/**
 	 * 只有需要验证权限时才会调用, 授权查询回调函数, 进行鉴权但缓存中无用户的授权信息时调用.在配有缓存的情况下，只加载一次.
+	 * 如果需要动态权限,但是又不想每次去数据库校验,可以存在ehcache中.自行完善
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection)
 	{
-		final String userName = (String) principalCollection.getPrimaryPrincipal();
-		if (userName != null)
+		final String loginName = SecurityUtils.getSubject().getPrincipal().toString();
+		if (loginName != null)
 		{
-			String userId = SecurityUtils.getSubject().getSession().getAttribute("id").toString();
-			List<ResourcesEntity> rs = new ArrayList<ResourcesEntity>();
+			Long userId = UserEntityUtil.getUserFromSession().getId();
 			// 权限信息对象info,用来存放查出的用户的所有的角色（role）及权限（permission）
 			SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-			List<RoleEntity> roles = roleService.findRoleByUser(userId);
-			HashSet<String> hs = new LinkedHashSet<String>();
-			for (RoleEntity role : roles)
+			List<ResourcesEntity> reList = resourcesService.findResourcessByUserId(userId);
+			for (ResourcesEntity resource : reList)
 			{
-				String roleId = String.valueOf(role.getId());
-				if (StringUtils.isNotBlank(roleId))
-				{
-					hs.add(roleId);
-					// 角色对应相应的权限
-					rs = resourcesService.findResourcessByRoleId(roleId);
-					for (ResourcesEntity resources : rs)
-					{
-						info.addStringPermission(resources.getResUrl());
-					}
+				String key = resource.getResUrl();
+				if (StringUtils.isNotBlank(key)) {
+					key = key.substring(key.indexOf("/")+1,key.lastIndexOf(".")).replace("/",":");
+					info.addStringPermission(key);
 				}
 			}
-			info.setRoles(hs);
 			return info;
 		}
 		return null;
+		
+/*		String username = (String)principalCollection.getPrimaryPrincipal();  
+		UserEntity user = userService.findByLoginName(username);
+        SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();  
+        Set<String> setList = new HashSet<String>();
+        Set<String> setPermList = new HashSet<String>();
+        List<RoleEntity> list = roleService.findRoleByUser(user.getId().toString());
+        for (RoleEntity roleEntity : list)
+		{
+        	setList.add(roleEntity.getId().toString());
+		}
+        authorizationInfo.setRoles(setList);  
+        Map<String,String> queryMap = new HashMap<String,String>();
+		queryMap.put("userId", user.getId().toString());
+		List<ResourcesEntity> reList = resourcesService.findRes(queryMap);
+		for (ResourcesEntity resource : reList)
+		{
+			String key = resource.getResUrl();
+			//key = key.substring(key.indexOf("/"),key.lastIndexOf("/"));
+			setPermList.add(key);
+		}
+		        return null;  
+		*/
+
 	}
 
 	/**
@@ -105,7 +115,8 @@ public class MyRealm extends AuthorizingRealm
 					ByteSource.Util.bytes(accountName + "" + user.getCredentialsSalt()), getName());
 			// bWVtbXNj
 			// 当验证都通过后，把用户信息放在session里
-			UserEntityUtil.saveUserToSession(user);
+			Session session = SecurityUtils.getSubject().getSession();
+			session.setAttribute(UserEntityUtil.USER_SESSION_KEY, user);
 			return authenticationInfo;
 		} else
 		{

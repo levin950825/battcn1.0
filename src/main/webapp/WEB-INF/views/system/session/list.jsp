@@ -23,7 +23,6 @@
 		url : rootPath + '/session/querySessionForList.shtml',
 		height : '100%',
 		showColumns : true,
-		showExport : true,
 		striped : true,
 		pagination : true,
 		pageNumber : 1,
@@ -79,7 +78,7 @@
 	        $.ajax({
 	            type: "post",
 	            data: row,
-	            url: rootPath+'/session/'+row.id+'/forceLogout.shtml',
+	            url: rootPath+'/session/forceLogout.shtml?sessionId='+row.id,
 	            success: function (data) {
 	            	$('#sessionTable').bootstrapTable('removeByUniqueId', row.id);
 	                layer.alert('强制剔除');

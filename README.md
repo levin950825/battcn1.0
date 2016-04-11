@@ -8,25 +8,38 @@ battcn系统
 项目部署：因为里面写了一个小的存储过程,所以 需要手动在 数据库执行  install.sql 里面已经注释掉了 ,因为有一个
 "初始化系统"的功能
 
--- 存储过程SQL
+群官网：http://www.battcn.com
+演示地址：http://www.battcn.com/battcn/
 
-DROP PROCEDURE IF EXISTS `treeNodes`;
-DELIMITER ;;
-CREATE DEFINER=`root`@`%` PROCEDURE `treeNodes`()
-BEGIN
- DECLARE LEVEL INT ;
- Set LEVEL=0 ;
- update t_mp_resources a inner join (SELECT id,LEVEL,concat(',',ID,',') scort FROM t_mp_resources WHERE parentId = 0) b on a.id=b.id
- set a.nlevel=b.LEVEL,a.scort=b.scort;
- WHILE FOUND_ROWS()>0 DO
-  SET LEVEL=LEVEL+1;
-update t_mp_resources a inner join (
-   SELECT ID,LEVEL,scort FROM t_mp_resources 
-    WHERE nLevel=LEVEL-1) b on a.parentId=b.id
-set a.nlevel=b.LEVEL,a.scort=concat(b.scort,a.ID,',');
- END WHILE;
-END
-;;
-DELIMITER ;
+开发流程：
+1.具体不清楚可以申请加群：391619659
+2.本系统为开源系统可以随意修改
+3.欢迎大家使用,本系统不会记录任何使用者的信息,可以放心使用,有Bug可以提交作者(QQ:1837307557)
+4.如果喜欢可以赞助作者,您的支持就是作者最大的动力
 
 
+
+定义实体类Entity(如：UserEntity)
+	|
+	|
+	|
+	|
+	----->创建Mppaer<Entity>(如：UserMapper<UserEntity>)	如果有自定义SQL操作则需要定义mapper.xml
+		|
+		|	
+		|
+		|
+		--------->定义Service接口(如：UserService)（根据Java规范所以接口化编程：可省）
+				|
+				|
+				|
+				|
+				--------->实现Service(如：UserServiceImpl)
+						|
+						|
+						|
+						|
+						|
+						-------->创建Controller控制器(如：UserController)
+				
+				

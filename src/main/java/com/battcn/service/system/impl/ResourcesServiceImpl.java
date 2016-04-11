@@ -110,4 +110,10 @@ public class ResourcesServiceImpl extends BaseServiceImpl<ResourcesEntity> imple
 		return SUCCESS;
 	}
 
+	@Override
+	public List<ResourcesEntity> findResourcessByUserId(Long userId)
+	{
+		return resourcesMapper.findResourcesByUserId(userId);
+	}
+
 }

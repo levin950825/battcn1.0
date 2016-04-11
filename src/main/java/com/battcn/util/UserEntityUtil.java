@@ -28,25 +28,6 @@ public class UserEntityUtil
 		return (UserEntity) session.getAttribute(UserEntityUtil.USER_SESSION_KEY);
 	}
 
-	/**
-	 * <一句话功能简述> <功能详细描述> 从session存放登录信息
-	 * 
-	 * @param request
-	 * @param loginInfo
-	 *            [参数说明]
-	 * 
-	 * @return void [返回类型说明]
-	 * @exception throws
-	 *                [违例类型] [违例说明]
-	 * @see [类、类#方法、类#成员]
-	 */
-	public static void saveUserToSession(UserEntity userForm)
-	{
-		Session session = SecurityUtils.getSubject().getSession();
-		session.setTimeout(1800000);
-		session.setAttribute(USER_SESSION_KEY, userForm);
-	}
-
 	public static String convertDateToString(Date date, String format)
 	{
 		return new SimpleDateFormat(format).format(date);
