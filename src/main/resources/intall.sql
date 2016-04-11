@@ -77,6 +77,7 @@ CREATE TABLE `t_mp_log` (
   `ip` varchar(30) DEFAULT NULL COMMENT 'IP地址',
   `description` varchar(5000) DEFAULT NULL COMMENT '描述',
   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
+  `url` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=269 DEFAULT CHARSET=utf8 COMMENT='枫叶网---->日志记录表';
 

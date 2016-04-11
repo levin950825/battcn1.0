@@ -28,9 +28,9 @@ public class UserServiceImpl extends BaseServiceImpl<UserEntity>implements UserS
 		return this.findByObject(entity);
 	}
 
-	public PageInfo<UserEntity> queryUserForList()
+	public PageInfo<UserEntity> queryUserForList(UserEntity entity)
 	{
-		return this.queryPageForList();
+		return this.queryPageForList(entity);
 	}
 
 	public String saveOrUpdate(UserEntity entity,Long txtGroupsSelect[])

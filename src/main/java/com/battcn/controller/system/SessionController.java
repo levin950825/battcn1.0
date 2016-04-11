@@ -9,7 +9,6 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.eis.SessionDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -43,25 +42,29 @@ public class SessionController
 	public List<JSONObject> querySessionForList()
 	{
 		List<JSONObject> list = new ArrayList<JSONObject>();
-		for (Session session : sessionDAO.getActiveSessions())
+		Collection<Session> sessions = sessionDAO.getActiveSessions();
+		if(sessions!=null && sessions.size() > 0 )
 		{
-			UserEntity userEntity = (UserEntity) session.getAttribute(UserEntityUtil.USER_SESSION_KEY);
-			
-			JSONObject result = new JSONObject();
-			result.put("id", session.getId());
-			result.put("host", session.getHost());
-			result.put("lastAccessTime", DateFormatUtils.format(session.getLastAccessTime(), "yyyy-MM-dd HH:mm:ss"));
-			result.put("startTimestamp", DateFormatUtils.format(session.getStartTimestamp(), "yyyy-MM-dd HH:mm:ss"));
-			result.put("accountName", userEntity.getAccountName());
-			result.put("userName", userEntity.getUserName());
-			list.add(result);
+			for (Session session : sessionDAO.getActiveSessions())
+			{
+				UserEntity userEntity = (UserEntity) session.getAttribute(UserEntityUtil.USER_SESSION_KEY);
+				
+				JSONObject result = new JSONObject();
+				result.put("id", session.getId());
+				result.put("host", session.getHost());
+				result.put("lastAccessTime", DateFormatUtils.format(session.getLastAccessTime(), "yyyy-MM-dd HH:mm:ss"));
+				result.put("startTimestamp", DateFormatUtils.format(session.getStartTimestamp(), "yyyy-MM-dd HH:mm:ss"));
+				result.put("accountName", userEntity.getAccountName());
+				result.put("userName", userEntity.getUserName());
+				list.add(result);
+			}
 		}
 		return list;
 	}
 
 	@ResponseBody
-	@RequestMapping("/{sessionId}/forceLogout")
-	public void forceLogout(@PathVariable("sessionId") String sessionId, RedirectAttributes redirectAttributes)
+	@RequestMapping("/forceLogout")
+	public void forceLogout(String sessionId, RedirectAttributes redirectAttributes)
 	{
 		try
 		{

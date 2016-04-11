@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50171
 File Encoding         : 65001
 
-Date: 2016-03-17 13:46:01
+Date: 2016-03-21 18:25:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -77,6 +77,7 @@ CREATE TABLE `t_mp_log` (
   `ip` varchar(30) DEFAULT NULL COMMENT 'IP地址',
   `description` varchar(5000) DEFAULT NULL COMMENT '描述',
   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
+  `url` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=269 DEFAULT CHARSET=utf8 COMMENT='枫叶网---->日志记录表';
 
@@ -366,13 +367,15 @@ CREATE TABLE `t_mp_userinfo` (
   `tel` varchar(24) DEFAULT NULL COMMENT '手机号码',
   `description` varchar(100) DEFAULT NULL COMMENT '介绍',
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '添加时间',
+  `photo` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='枫叶网---->用户信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='枫叶网---->用户信息表';
 
 -- ----------------------------
 -- Records of t_mp_userinfo
 -- ----------------------------
-INSERT INTO `t_mp_userinfo` VALUES ('1', '秋殇', 'admin', '9c6c9e22ae8c773c8f07a75b28563152', '1', 'a122080ba7afebf036ed3c811c7880f9', '', '', null, '2016-03-15 14:31:54');
+INSERT INTO `t_mp_userinfo` VALUES ('1', '秋殇', 'admin', '9c6c9e22ae8c773c8f07a75b28563152', '1', 'a122080ba7afebf036ed3c811c7880f9', '', '', null, '2016-03-15 14:31:54', 'upload/files/201603/2311350619jk.jpg');
+INSERT INTO `t_mp_userinfo` VALUES ('16', '测试账号密码123', 'test', '42ce175f3fbc4b6ea58847508162a89e', '1', 'c6845b43c38a916abcc501a41706346e', 'test@163.com', '111', null, '2016-03-21 17:54:44', null);
 
 -- ----------------------------
 -- Table structure for t_mp_user_res
@@ -392,6 +395,11 @@ INSERT INTO `t_mp_user_res` VALUES ('1', '2');
 INSERT INTO `t_mp_user_res` VALUES ('1', '3');
 INSERT INTO `t_mp_user_res` VALUES ('1', '4');
 INSERT INTO `t_mp_user_res` VALUES ('1', '5');
+INSERT INTO `t_mp_user_res` VALUES ('1', '6');
+INSERT INTO `t_mp_user_res` VALUES ('1', '7');
+INSERT INTO `t_mp_user_res` VALUES ('1', '16');
+INSERT INTO `t_mp_user_res` VALUES ('1', '17');
+INSERT INTO `t_mp_user_res` VALUES ('1', '18');
 INSERT INTO `t_mp_user_res` VALUES ('7', '1');
 INSERT INTO `t_mp_user_res` VALUES ('7', '2');
 INSERT INTO `t_mp_user_res` VALUES ('7', '3');
@@ -399,6 +407,25 @@ INSERT INTO `t_mp_user_res` VALUES ('7', '4');
 INSERT INTO `t_mp_user_res` VALUES ('7', '5');
 INSERT INTO `t_mp_user_res` VALUES ('7', '6');
 INSERT INTO `t_mp_user_res` VALUES ('7', '7');
+INSERT INTO `t_mp_user_res` VALUES ('13', '1');
+INSERT INTO `t_mp_user_res` VALUES ('13', '2');
+INSERT INTO `t_mp_user_res` VALUES ('13', '3');
+INSERT INTO `t_mp_user_res` VALUES ('13', '4');
+INSERT INTO `t_mp_user_res` VALUES ('13', '5');
+INSERT INTO `t_mp_user_res` VALUES ('13', '8');
+INSERT INTO `t_mp_user_res` VALUES ('13', '9');
+INSERT INTO `t_mp_user_res` VALUES ('13', '10');
+INSERT INTO `t_mp_user_res` VALUES ('13', '11');
+INSERT INTO `t_mp_user_res` VALUES ('13', '12');
+INSERT INTO `t_mp_user_res` VALUES ('13', '13');
+INSERT INTO `t_mp_user_res` VALUES ('13', '14');
+INSERT INTO `t_mp_user_res` VALUES ('13', '15');
+INSERT INTO `t_mp_user_res` VALUES ('15', '16');
+INSERT INTO `t_mp_user_res` VALUES ('15', '17');
+INSERT INTO `t_mp_user_res` VALUES ('15', '18');
+INSERT INTO `t_mp_user_res` VALUES ('16', '16');
+INSERT INTO `t_mp_user_res` VALUES ('16', '17');
+INSERT INTO `t_mp_user_res` VALUES ('16', '18');
 
 -- ----------------------------
 -- Table structure for t_mp_user_role
@@ -415,6 +442,13 @@ CREATE TABLE `t_mp_user_role` (
 -- ----------------------------
 INSERT INTO `t_mp_user_role` VALUES ('1', '1');
 INSERT INTO `t_mp_user_role` VALUES ('7', '2');
+INSERT INTO `t_mp_user_role` VALUES ('14', '2');
+INSERT INTO `t_mp_user_role` VALUES ('15', '2');
+INSERT INTO `t_mp_user_role` VALUES ('16', '1');
+INSERT INTO `t_mp_user_role` VALUES ('16', '2');
+
+
+
 
 -- ----------------------------
 -- Procedure structure for treeNodes

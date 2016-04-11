@@ -68,8 +68,8 @@ public class EhcacheUtils
 
 	static
 	{
-		EhcacheUtils.initCacheManager();
-		EhcacheUtils.initCache("cache");
+		//EhcacheUtils.initCacheManager();
+		//EhcacheUtils.initCache("cache");
 	}
 
 	/**
@@ -612,8 +612,8 @@ public class EhcacheUtils
 	public static void main(String[] arg)
 	{
 		// 初始化--必须
-		EhcacheUtils.initCacheManager();
-		EhcacheUtils.initCache("cache");
+		//EhcacheUtils.initCacheManager();
+		//EhcacheUtils.initCache("cache");
 		EhcacheUtils.put("A", "AAAAA");
 		EhcacheUtils.put("B", "BBBBB");
 		EhcacheUtils.put("F", "FFFFF");
@@ -623,6 +623,7 @@ public class EhcacheUtils
 		{
 			System.out.println(keys.get(i));
 		}
-		EhcacheUtils.shutdown();
+		//EhcacheUtils.shutdown();
+		EhcacheUtils.removeAllCache();
 	}
 }

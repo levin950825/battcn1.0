@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="col-sm-5">
-                <form method="post" action="check.shtml">
+                <form method="post" action="login.shtml">
                     <p class="m-t-md">登录到battcn后台</p>
                     <input type="text" class="form-control uname" name="accountName" value="admin" placeholder="用户名" />
                     <input type="password" class="form-control pword m-b" name="passWord" value="123456" placeholder="密码" />

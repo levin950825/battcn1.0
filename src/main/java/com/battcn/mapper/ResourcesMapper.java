@@ -10,7 +10,9 @@ import tk.mybatis.mapper.common.Mapper;
 
 public interface ResourcesMapper extends Mapper<ResourcesEntity>
 {
+
 	
+	public List<ResourcesEntity> findResourcesByUserId(Long userId);
 	public List<ResourcesEntity> findResourcessByRoleId(String roleId);
 	public List<ResourcesEntity> findResourcessByMap(Map<String,String> queryMap);
 	

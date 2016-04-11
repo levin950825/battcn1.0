@@ -16,7 +16,9 @@ public interface ResourcesService extends BaseService<ResourcesEntity>
 	public List<ResourcesEntity> findRes(Map<String, String> queryMap);
 
 	public List<ResourcesEntity> findResourcessByRoleId(String roleId);
-
+	
+	public List<ResourcesEntity> findResourcessByUserId(Long userId);
+	
 	public List<ResourcesEntity> findResourcessByMap(Map<String, String> queryMap);
 
 	public String saveOrUpdate(ResourcesEntity entity);

@@ -15,7 +15,11 @@
      http://www.springframework.org/schema/aop/spring-aop-4.1.xsd"
 	default-lazy-init="false">
 
+	<task:annotation-driven />
+	<tx:annotation-driven />
 	<context:component-scan base-package="com.battcn.service" />
+	<context:component-scan base-package="com.battcn.task" />
+	<bean class="com.battcn.task.CacheInit" init-method="init"/>
 	
 	
 	<!-- 统一异常处理方式 -->
@@ -132,7 +136,6 @@
     </bean>     
 	<!-- 标注类型 的事务配置 如果使用注解事务。就放开 -->
 	 <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
-	<!-- <task:annotation-driven /> -->
 	
 	<bean id="fileRepository" class="com.battcn.util.upload.FileRepository" init-method="init"></bean>
 </beans>

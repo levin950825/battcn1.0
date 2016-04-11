@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.battcn.entity.ServiceInfoEntity;
 import com.battcn.service.system.IServiceInfoApi;
-import com.battcn.util.PropertiesUtils;
+import com.battcn.util.EhcacheUtils;
 import com.battcn.util.SystemInfo;
 import com.github.pagehelper.PageInfo;
 
@@ -41,10 +41,10 @@ public class SystemController
 	@RequestMapping("monitor")
 	public String monitor(Model model)
 	{
-		model.addAttribute("cpu", PropertiesUtils.findPropertiesKey("cpu"));
-		model.addAttribute("jvm", PropertiesUtils.findPropertiesKey("jvm"));
-		model.addAttribute("ram", PropertiesUtils.findPropertiesKey("ram"));
-		model.addAttribute("toEmail", PropertiesUtils.findPropertiesKey("toEmail"));
+		model.addAttribute("cpu", EhcacheUtils.get("cpu"));
+		model.addAttribute("jvm", EhcacheUtils.get("jvm"));
+		model.addAttribute("ram", EhcacheUtils.get("ram"));
+		model.addAttribute("toEmail", EhcacheUtils.get("toEmail"));
 		return "/system/sys/monitor";
 	}
 
@@ -74,8 +74,9 @@ public class SystemController
     public Map<String, Object> modifySer(String key,String value) throws Exception{
     	Map<String, Object> dataMap = new HashMap<String,Object>();
     	try {
-		// 从输入流中读取属性列表（键和元素对）
-    		PropertiesUtils.modifyProperties(key, value);
+    		// 从输入流中读取属性列表（键和元素对）
+    		EhcacheUtils.put(key, value);
+    		//PropertiesUtils.modifyProperties(key, value);
 		} catch (Exception e) {
 			dataMap.put("flag", false);
 		}

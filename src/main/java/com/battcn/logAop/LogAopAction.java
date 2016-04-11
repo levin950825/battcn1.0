@@ -24,12 +24,8 @@ import com.battcn.util.UserEntityUtil;
 
 /**
  * 切点类
- * 
- * @author LJN
- * @since 2015-05-05 Pm 20:35
- * @version 1.0
  */
-@Aspect
+@Aspect	
 @Component
 public class LogAopAction extends BaseController
 {
@@ -38,26 +34,27 @@ public class LogAopAction extends BaseController
 	@Autowired
 	private LogService logService;
 
-	// Controller层切点
+	/**
+	 * Controller 拦截点,前置通知
+	 */
 	@Pointcut("@annotation(com.battcn.annotation.SystemLog)")
-	public void controllerAspect()
+	public void beforeController()
 	{
 	}
 
 	/**
 	 * 操作异常记录
 	 * 
-	 * @descript
 	 * @param point
 	 * @param e
 	 * @author LJN
 	 * @date 2015年5月5日
 	 * @version 1.0
 	 */
-	@AfterThrowing(pointcut = "controllerAspect()", throwing = "e")
+	@AfterThrowing(pointcut = "beforeController()", throwing = "e")
 	public void doAfterThrowing(JoinPoint point, Throwable e)
 	{
-		HttpServletRequest request = CommonUtil.getHttpRequest();
+		HttpServletRequest request = getHttpRequest();
 		LogEntity logForm = new LogEntity();
 		Map<String, Object> map = null;
 		String accountName = null;
@@ -73,7 +70,7 @@ public class LogAopAction extends BaseController
 		{
 			map = getControllerMethodDescription(point);
 			// 登录名
-			accountName = UserEntityUtil.getUserFromSession().getUserName();
+			accountName = UserEntityUtil.getUserFromSession().getAccountName();
 			if (StringUtil.isEmpty(accountName))
 			{
 				accountName = "无法获取登录用户信息！";
@@ -82,6 +79,7 @@ public class LogAopAction extends BaseController
 		{
 			accountName = "无法获取登录用户信息！";
 		}
+		logForm.setUrl(request.getRequestURI());
 		logForm.setAccountName(accountName);
 		logForm.setModule(String.valueOf(map.get("module")));
 		logForm.setMethods("<font color=\"red\">执行方法异常:-->" + map.get("methods") + "</font>");
@@ -103,10 +101,10 @@ public class LogAopAction extends BaseController
 	 * @param joinPoint
 	 *            切点
 	 */
-	@Around("controllerAspect()")
+	@Around("beforeController()")
 	public Object doController(ProceedingJoinPoint point)
 	{
-		HttpServletRequest request = CommonUtil.getHttpRequest();
+		HttpServletRequest request = getHttpRequest();
 		Object result = null;
 		// 执行方法名
 		String methodName = point.getSignature().getName();
@@ -128,7 +126,7 @@ public class LogAopAction extends BaseController
 		try
 		{
 			// 登录名
-			accountName = UserEntityUtil.getUserFromSession().getUserName();
+			accountName = UserEntityUtil.getUserFromSession().getAccountName();
 			if (StringUtil.isEmpty(accountName))
 			{
 				accountName = "无法获取登录用户信息！";
@@ -152,6 +150,7 @@ public class LogAopAction extends BaseController
 		}
 		try
 		{
+			logForm.setUrl(request.getRequestURI());
 			logForm.setAccountName(accountName);
 			logForm.setModule(String.valueOf(map.get("module")));
 			logForm.setMethods(String.valueOf(map.get("methods")));
@@ -169,7 +168,7 @@ public class LogAopAction extends BaseController
 		{
 			// 记录本地异常日志
 			logger.error("====通知异常====");
-			logger.error("异常信息:{}", e.getMessage());
+			logger.error("异常信息:", e.getMessage());
 		}
 		return result;
 	}

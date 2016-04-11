@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.battcn.entity.ServiceInfoEntity;
 import com.battcn.service.system.IServiceInfoApi;
 import com.battcn.util.CommonUtil;
+import com.battcn.util.EhcacheUtils;
 import com.battcn.util.EmailUtils;
 import com.battcn.util.PropertiesUtils;
 import com.battcn.util.SystemInfo;
@@ -27,7 +28,6 @@ public class MonitorTask
 {
 	@Autowired
 	private IServiceInfoApi serviceInfoApi;
-
 	/**
 	 * 与用户设置的使用率比较 spirng 调度
 	 * 
@@ -41,10 +41,10 @@ public class MonitorTask
 		String serverUsage = usage.get("ramUsage") + "";// 系统内存使用率
 		String jvmUsage = usage.get("jvmUsage") + "";// 计算ＪＶＭ内存使用率
 		Properties prop = PropertiesUtils.getProperties();
-		String cpu = prop.getProperty("cpu");
-		String jvm = prop.getProperty("jvm");
-		String ram = prop.getProperty("ram");
-		String email = prop.getProperty("toEmail");
+		String cpu = (String) EhcacheUtils.get("cpu");
+		String jvm = (String) EhcacheUtils.get("jvm");
+		String ram = (String) EhcacheUtils.get("ram");
+		String email = (String) EhcacheUtils.get("toEmail");
 		// 当系统消耗内存大于或等于用户设定的内存时，发送邮件
 		String cpubool = "";
 		String jvmbool = "";
