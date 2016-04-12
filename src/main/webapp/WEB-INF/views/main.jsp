@@ -1,76 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div class="row  border-bottom white-bg dashboard-header">
-	<div class="col-sm-12">
-		<blockquote class="text-warning" style="font-size: 14px">
-			您是否需要自己做一款后台、会员中心等等的，但是又苦于写搬砖代码呢… <br>您是否一直在苦苦寻找一套简单而又强大的的后台模板呢…
-			<br>…………
-			<h4 class="text-danger">那么，现在battcn_1.0来了</h4>
-		</blockquote>
-
-		<hr>
+	<div class="col-sm-4">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>关于Battcn</h5>
+			</div>
+			<div class="ibox-content">
+				<p>battcn具有以下特点：</p>
+				<ol>
+					<li>完全响应式布局（支持电脑、平板、手机等所有主流设备）</li>
+					<li>基于最新版本的Bootstrap 3.3.4</li>
+					<li>提供3套不同风格的皮肤</li>
+					<li>支持多种布局方式</li>
+					<li>使用最流行的的扁平化设计</li>
+					<li>提供了诸多的UI组件</li>
+					<li>集成多款国内优秀插件，诚意奉献</li>
+					<li>提供盒型、全宽、响应式视图模式</li>
+					<li>采用HTML5 & CSS3</li>
+					<li>拥有良好的代码结构</li>
+					<li style="color: red">完全免费开源,不会记录开发者任何信息</li>
+				</ol>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm-5">
-		<h2>battcn_1.0后台</h2>
-		<p>
-			基于Bootstrap3.3.5最新版本开发的扁平化主题， 她采用了主流的左右两栏式布局， 使用了Html5+CSS3等现代技术，
-			她提供了诸多的强大的可以重新组合的UI组件， 并集成了最新的jQuery版本(v2.1.4)，
-			当然，也集成了很多功能强大，用途广泛的jQuery插件， 她可以用于所有的Web应用程序 ，如<b>网站管理后台</b>，<b>网站会员中心</b>，
-			<b>CMS</b>，<b>CRM</b>，<b>OA</b>
-		</p>
-		<br>
-		<p>
-			<a class="btn btn-success btn-outline"
-				href="http://wpa.qq.com/msgrd?v=3&uin=1837307557&site=qq&menu=yes"
-				target="_blank"> <i class="fa fa-qq"> </i> QQ联系我
-			</a>
-		</p>
+	<div class="col-sm-4">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>联系信息</h5>
+			</div>
+			<div class="ibox-content">
+				<p>
+					<i class="fa fa-qq"></i> QQ：<a
+						href="http://wpa.qq.com/msgrd?v=3&uin=1837307557&site=qq&menu=yes"
+						target="_blank">1837305557</a>
+				</p>
+				<p>
+					<i class="fa fa-weixin"></i> 微信：<a href="javascript:;">levin950825</a>
+				</p>
+				<p>
+					<i class="fa fa-credit-card"></i> 支付宝：<a href="javascript:;"
+						class="支付宝信息"> 13002171912 唐亚峰</a>
+				</p>
+				<hr>
+				<p>
+					如果需要赞助battcn_1.0，可直接付款到支付宝：<a href="javascript:void(0);">13002171912</a>，
+					收款人：<a href="javascript:void(0);">唐亚峰</a>。
+				</p>
+				<div class="alert alert-warning">
+					付款完成后请及时联系作者，或在付款备注中留下邮箱或QQ，方便作者及时联系您。</div>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm-5">
-		<h4>battcn具有以下特点：</h4>
-		<ol>
-			<li>完全响应式布局（支持电脑、平板、手机等所有主流设备）</li>
-			<li>基于最新版本的Bootstrap 3.3.4</li>
-			<li>提供3套不同风格的皮肤</li>
-			<li>支持多种布局方式</li>
-			<li>使用最流行的的扁平化设计</li>
-			<li>提供了诸多的UI组件</li>
-			<li>集成多款国内优秀插件，诚意奉献</li>
-			<li>提供盒型、全宽、响应式视图模式</li>
-			<li>采用HTML5 & CSS3</li>
-			<li>拥有良好的代码结构</li>
-			<li>更多……</li>
-		</ol>
+	<div class="col-sm-4">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>REDEME</h5>
+			</div>
+			<div class="ibox-content">
+				<p>
+					如果喜欢battcn，希望获取到源码，请前往我们的官网  <a href="http://www.battcn.com" target="_blank">www.battcn.com</a>获取源码
+					请时常关注我们，因为我们将不定期更新功能修复BUG，您也可以提出您的宝贵 意见或者发现的BUG，
+					作者将在第一时间处理并且通知到您	，battcn的成长离不开大家的 支持。			
+				</p>
+				<ol>
+					<li>访问 <a href="http://www.battcn.com" target="_blank">www.battcn.com</a></li>
+					<li>点击发现</li>
+					<li>获取源码 /在线演示</li>
+					<li style="color: red">获取源码后请先阅读源码中的README 遇到任何问题都可以询问作者</li>
+					<li style="color: red">技术支持：1837307557</li>
+					<li style="color: red">QQ交流群：391619659</li>
+				</ol>
+			</div>
+		</div>
 	</div>
-
 </div>
 <div class="wrapper wrapper-content">
 	<div class="row">
 		<div class="col-sm-5">
-
-			<div class="ibox float-e-margins">
-				<div class="ibox-title">
-					<h5>联系信息</h5>
-
-				</div>
-				<div class="ibox-content">
-
-					<p>
-						<i class="fa fa-qq"></i> QQ：<a
-							href="http://wpa.qq.com/msgrd?v=3&uin=1837307557&site=qq&menu=yes"
-							target="_blank">1837305557</a>
-					</p>
-					<p>
-						<i class="fa fa-weixin"></i> 微信：<a href="javascript:;">levin950825</a>
-					</p>
-					<p>
-						<i class="fa fa-credit-card"></i> 支付宝：<a href="javascript:;"
-							class="支付宝信息"> 13002171912 唐亚峰</a>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-4">
 			<div class="ibox float-e-margins">
 				<div class="ibox-title">
 					<h5>更新日志</h5>
@@ -78,8 +85,23 @@
 				<div class="ibox-content no-padding">
 					<div class="panel-body">
 						<div class="panel-group" id="version">
-						
-						
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#version" href="#v14">v1.4.0</a>
+										<code class="my-pull-right">2016.04.12</code>
+									</h4>
+								</div>
+								<div id="v14" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<ol>
+											<li>修改Shiro访问URL无法授权</li>
+											<li>新增 404错误页面统一处理</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
@@ -87,7 +109,7 @@
 										<code class="my-pull-right">2016.03.31</code>
 									</h4>
 								</div>
-								<div id="v13" class="panel-collapse collapse in">
+								<div id="v13" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ol>
 											<li>新增Log记录URL</li>
@@ -97,7 +119,7 @@
 									</div>
 								</div>
 							</div>
-						
+
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
@@ -115,7 +137,7 @@
 									</div>
 								</div>
 							</div>
-						
+
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h5 class="panel-title">
@@ -161,27 +183,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-5">
-			<div class="ibox float-e-margins">
-				<div class="ibox-title">
-					<h5>赞助说明</h5>
-				</div>
-				<div class="ibox-content">
-					<p>赞助后我可以获得什么？</p>
-					<ol>
-						<li>终身免费升级服务；</li>
-						<li>必要的技术支持；</li>
-					</ol>
-					<hr>
-					<p>
-						如果需要赞助battcn_1.0，可直接付款到支付宝：<a href="javascript:void(0);">13002171912</a>，
-						收款人：<a href="javascript:void(0);">唐亚峰</a>。
-					</p>
-					<div class="alert alert-warning">
-						付款完成后请及时联系作者，或在付款备注中留下邮箱或QQ，方便作者及时联系您。</div>
 				</div>
 			</div>
 		</div>
@@ -252,7 +253,9 @@
 						流星</li>
 					<li class="list-group-item "><span class="badge badge-primary">6.8</span>
 						iMike</li>
-						  
+					<li class="list-group-item "><span class="badge badge-info">10</span>
+						阿铭</li>
+
 				</ul>
 			</div>
 		</div>

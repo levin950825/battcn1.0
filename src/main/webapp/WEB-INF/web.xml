@@ -4,8 +4,8 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>battcn</display-name>
-	
-	<!--过滤字符集-->
+
+	<!--过滤字符集 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -22,8 +22,8 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>*.shtml</url-pattern>
 	</filter-mapping>
-	
-	
+
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring-shiro.xml,classpath:spring-application.xml</param-value>
@@ -46,7 +46,7 @@
 		<filter-name>shiroFilter</filter-name>
 		<url-pattern>*.shtml</url-pattern>
 	</filter-mapping>
-	
+
 	<servlet>
 		<servlet-name>springmvc</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -104,6 +104,10 @@
 		<servlet-name>default</servlet-name>
 		<url-pattern>*.woff</url-pattern>
 	</servlet-mapping>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/404.jsp</location>
+	</error-page>
 	<welcome-file-list>
 		<welcome-file>login.shtml</welcome-file>
 	</welcome-file-list>
